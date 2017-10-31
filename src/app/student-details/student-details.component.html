@@ -1,11 +1,13 @@
 <div *ngIf="student" class="container-fluid">
   <div class="col-md-6">
-    <h2 class="modal-title">{{student.Ime}} details!</h2>
-    <div><label>Index: </label>{{student.Index}}</div>
-    <div><label>Nasoka: </label>{{student.Nasoka}}</div>
-    <div>
-      <label>name: </label>
-      <input [(ngModel)]="student.Ime" placeholder="name"/>
+    <div class="well">
+      <h2 class="page-header">Детали за корисникот {{student.Ime}} </h2>
+      <div class="form">
+        <div class="form-control">Prezime: {{student.Prezime}} </div>
+        <div class="form-control">Index: {{student.Index}}</div>
+        <div class="form-control">Nasoka {{student.Nasoka}}</div>
+        <!-- <div class="form-control">Ime: <input class="form-control" [(ngModel)]="student.Ime" placeholder="ime"/> </div> -->
+      </div>
     </div>
   </div>
 </div>

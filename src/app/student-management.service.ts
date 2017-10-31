@@ -13,9 +13,9 @@ export class StudentManagementService {
 }
 export const STUDENTS: Student[] = [
   { Ime: 'Tomislav', Prezime: 'Anastasovski', Index: 153033, Nasoka: 'Pet'},
-  { Ime: 'Tomislav1', Prezime: 'Anastasovski1', Index: 153034, Nasoka: 'KNI'},
-  { Ime: 'Tomislav2', Prezime: 'Anastasovski2', Index: 153034, Nasoka: 'KNI'},
-  { Ime: 'Tomislav3', Prezime: 'Anastasovski3', Index: 153034, Nasoka: 'KNI'}
+  { Ime: 'Dean', Prezime: 'Manceski', Index: 151124, Nasoka: 'IKI'},
+  { Ime: 'Ana', Prezime: 'Stoilova', Index: 124004, Nasoka: 'MT'},
+  { Ime: 'Slavko', Prezime: 'Rajkoski', Index: 171100, Nasoka: 'KNI'}
 ];
 
 
