@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {StudentManagementService, STUDENTS} from './student-management.service';
+import {StudentManagementService} from './student-management.service';
 import {Student} from './model/student';
 
 @Component({
@@ -9,21 +9,16 @@ import {Student} from './model/student';
   providers: [StudentManagementService]
 })
 
-export class AppComponent implements OnInit {
-  title = 'Labaratoriska1';
+export class AppComponent {
+  title = 'Labaratoriski po Web Programiranje';
   students: Student[];
   currentStudent: Student;
 
-  constructor (private studentService: StudentManagementService) {}
-
-
-  getStudents(): void {
-    this.studentService.getStudents().then(students => this.students = students);
+  constructor (private studentService: StudentManagementService) {
+    this.studentService.getStudents().then(rezultat => this.students = rezultat);
   }
 
-  ngOnInit(): void {
-    this.getStudents();
-  }
+
 
   onSelect(student: Student):  void {
     this.currentStudent = student;

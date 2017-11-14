@@ -1,6 +1,6 @@
 export class Student {
   Ime: string;
   Prezime: string;
-  Index: number;
+  Index: string;
   Nasoka: string;
 }

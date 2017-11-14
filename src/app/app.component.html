@@ -6,14 +6,16 @@
   <div class="row">
     <div class="col-md-6">
       <ul class="list-group">
-        <li *ngFor="let s of students" (click)="onSelect(s)" [class.selected]="s===currentStudent" class="list-group-item">
-          <span>{{s.Ime}}</span>
-          <span>{{s.Prezime}}</span>
+        <li *ngFor="let s of students" (click)="onSelect(s)" [class.selected]="s===currentStudent" [routerLink]="['/details', s.Index]" class="list-group-item">
+          <span> {{s.Ime}} {{s.Prezime}}</span>
         </li>
       </ul>
+        <button class="btn btn-primary clickable" [routerLink]="['/new']">
+          Nov Student
+        </button>
     </div>
     <div class="col-md-6">
-      <app-student-details [student]="currentStudent"></app-student-details>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

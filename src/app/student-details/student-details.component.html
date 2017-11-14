@@ -1,13 +1,18 @@
-<div *ngIf="student" class="container-fluid">
+<div *ngIf="currentStudent!==undefined" class="container-fluid">
   <div class="col-md-6">
     <div class="well">
-      <h2 class="page-header">Детали за корисникот {{student.Ime}} </h2>
+      <h2 class="page-header">Детали за корисникот {{currentStudent.Ime}} </h2>
       <div class="form">
-        <div class="form-control">Prezime: {{student.Prezime}} </div>
-        <div class="form-control">Index: {{student.Index}}</div>
-        <div class="form-control">Nasoka {{student.Nasoka}}</div>
-        <!-- <div class="form-control">Ime: <input class="form-control" [(ngModel)]="student.Ime" placeholder="ime"/> </div> -->
+        <div class="form-control">Prezime: {{currentStudent.Prezime}} </div>
+        <div class="form-control">Index: {{currentStudent.Index}}</div>
+        <div class="form-control">Nasoka: {{currentStudent.Nasoka}}</div> <br>
+        <div class="form-group">
+           <button class="btn btn-primary clickable" [routerLink]="['/edit', currentStudent.Index]">
+             Napravi Promena
+           </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
