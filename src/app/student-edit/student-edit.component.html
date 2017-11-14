@@ -1,0 +1,148 @@
+<div class="form-group row">
+
+  <label for="indeks" class="col-sm-2 col-form-label">
+    Index
+  </label>
+  <div class="col-sm-10">
+    <input id="indeks"
+           type="text"
+           required
+           maxlength="6"
+           minlength="6"
+           class="form-control"
+           [(ngModel)]="currentStudent.Index"
+           #indeks="ngModel"
+
+    />
+    <div *ngIf="indeks.invalid && (indeks.dirty || indeks.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="indeks.errors.required">
+        Index is required.
+      </div>
+      <div *ngIf="indeks.errors.maxlength">
+        The maximum length of the index is 6.
+      </div>
+      <div *ngIf="indeks.errors.minlength">
+        The minimum length of the index is 6.
+      </div>
+
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <label for="studentName" class="col-sm-2 col-form-label">
+    Ime
+  </label>
+  <div class="col-sm-10">
+    <input id="studentName"
+           type="text"
+           required
+           maxlength="30"
+           minlength="2"
+           class="form-control"
+           [(ngModel)]="currentStudent.Ime"
+           #studentName="ngModel"
+
+    />
+    <div *ngIf="studentName.invalid && (studentName.dirty || studentName.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="studentName.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="studentName.errors.maxlength">
+        The maximum length of the name is 30.
+      </div>
+      <div *ngIf="studentName.errors.minlength">
+        The minimum length of the name is 2.
+      </div>
+
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <label for="indeks" class="col-sm-2 col-form-label">
+    Prezime
+  </label>
+  <div class="col-sm-10">
+    <input id="Prezime"
+           type="text"
+           required
+           maxlength="30"
+           minlength="2"
+           class="form-control"
+           [(ngModel)]="currentStudent.Prezime"
+           #Prezime="ngModel"
+
+    />
+    <div *ngIf="Prezime.invalid && (Prezime.dirty || Prezime.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="Prezime.errors.required">
+        Prezime is required.
+      </div>
+      <div *ngIf="Prezime.errors.maxlength">
+        The maximum length of the Surname is 30.
+      </div>
+      <div *ngIf="Prezime.errors.minlength">
+        The minimum length of the Surname is 2.
+      </div>
+
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <label for="indeks" class="col-sm-2 col-form-label">
+    Nasoka
+  </label>
+  <div class="col-sm-10">
+    <input id="Nasoka"
+           type="text"
+           required
+           pattern="(^Pet$)|(^Kni$)|(^Mt$)|(^Iki$)|(^Asi$)|(^Knia$)"
+           class="form-control"
+           [(ngModel)]="currentStudent.Nasoka"
+           #Nasoka="ngModel"
+
+    />
+    <div *ngIf="Nasoka.invalid && (Nasoka.dirty || Nasoka.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="Nasoka.errors.required">
+        Nasoka is required.
+      </div>
+      <div *ngIf="Nasoka.errors.pattern">
+        The Nasoka is not in the list of allowed values.
+      </div>
+
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <div class="col-md-12">
+
+    <button class="btn btn-success"
+            *ngIf="!isEdit"
+            [disabled]="indeks.invalid || studentName.invalid || Prezime.invalid || Nasoka.invalid"
+            (click)="save()">
+      Create
+    </button>
+
+    <button class="btn btn-primary clickable"
+            *ngIf="isEdit"
+            (click)="edit()">
+      Edit
+    </button>
+
+    <button class="btn btn-default clickable "
+            [routerLink]="['/']">
+      Cancel
+    </button>
+  </div>
+
+</div>
